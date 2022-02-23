@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:to_do_hive/widgets/groups/groups_widget_model.dart';
@@ -79,16 +77,16 @@ class _GroupListRowWidget extends StatelessWidget {
     return Slidable(
       child: ListTile(
         title: Text(group.name),
-        trailing: Icon(Icons.chevron_right),
-        onTap: () {},
+        trailing: const Icon(Icons.chevron_right),
+        onTap: () => model.showTasks(context, indexInList),
       ),
       startActionPane: ActionPane(
-        motion: ScrollMotion(),
+        motion: const ScrollMotion(),
 
         children: [
           SlidableAction(
             onPressed: (context) => model.deleteGroup(indexInList),
-            backgroundColor: Color.fromARGB(255, 214, 0, 0),
+            backgroundColor: const Color.fromARGB(255, 214, 0, 0),
             foregroundColor: Colors.white,
             icon: Icons.delete,
             label: 'Delete',
